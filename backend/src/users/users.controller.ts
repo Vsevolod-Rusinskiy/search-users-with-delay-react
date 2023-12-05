@@ -1,7 +1,7 @@
-import { Body, Controller, Post } from '@nestjs/common';
-import { UsersService } from './users.service';
-import { User } from './entities/user.entity';
-import { SearchUsersDto } from './dto/search-users.dto';
+import { Body, Controller, Post } from '@nestjs/common'
+import { UsersService } from './users.service'
+import { User } from './entities/user.entity'
+import { SearchUsersDto } from './dto/search-users.dto'
 
 @Controller('users')
 export class UsersController {
@@ -9,6 +9,6 @@ export class UsersController {
 
     @Post('search')
     async searchUsers(@Body() filters: SearchUsersDto): Promise<User[]> {
-        return this.usersService.findUsers(filters);
+        return this.usersService.findUsers(filters)
     }
 }

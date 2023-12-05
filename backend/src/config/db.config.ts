@@ -1,5 +1,5 @@
-import { ConfigService } from '@nestjs/config';
-import { TypeOrmModuleOptions } from '@nestjs/typeorm';
+import { ConfigService } from '@nestjs/config'
+import { TypeOrmModuleOptions } from '@nestjs/typeorm'
 
 export const dbConfig = (configService: ConfigService): TypeOrmModuleOptions => ({
     type: 'postgres',
@@ -10,4 +10,4 @@ export const dbConfig = (configService: ConfigService): TypeOrmModuleOptions => 
     database: configService.get<string>('DATABASE_NAME'),
     synchronize: true,
     autoLoadEntities: true,
-});
+})
